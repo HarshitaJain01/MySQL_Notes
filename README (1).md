@@ -32,3 +32,12 @@ SELECT COUNT(DISTINCT Distributor) FROM FilmLocations WHERE Actor1="Clint Eastwo
 ## LIMIT
 ### Retrieve the first 15 rows from the “FilmLocations” table starting from row 11.
 SELECT * FROM FilmLocations LIMIT 15 OFFSET 10;
+
+## Retrieve the name of first 50 films distinctly.
+SELECT DISTINCT Title FROM FilmLocations LIMIT 50;
+
+## Retrieve first 10 film names distinctly released in 2015.
+SELECT DISTINCT Title FROM FilmLocations WHERE ReleaseYear=2015 LIMIT 10;
+
+## Retrieve the next 3 film names distinctly after first 5 films released in 2015.
+SELECT DISTINCT Title FROM FilmLocations WHERE ReleaseYear=2015 LIMIT 3 OFFSET 5;
