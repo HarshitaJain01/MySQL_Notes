@@ -33,11 +33,46 @@ SELECT COUNT(DISTINCT Distributor) FROM FilmLocations WHERE Actor1="Clint Eastwo
 ### Retrieve the first 15 rows from the “FilmLocations” table starting from row 11.
 SELECT * FROM FilmLocations LIMIT 15 OFFSET 10;
 
-## Retrieve the name of first 50 films distinctly.
+### Retrieve the name of first 50 films distinctly.
 SELECT DISTINCT Title FROM FilmLocations LIMIT 50;
 
-## Retrieve first 10 film names distinctly released in 2015.
+### Retrieve first 10 film names distinctly released in 2015.
 SELECT DISTINCT Title FROM FilmLocations WHERE ReleaseYear=2015 LIMIT 10;
 
-## Retrieve the next 3 film names distinctly after first 5 films released in 2015.
+### Retrieve the next 3 film names distinctly after first 5 films released in 2015.
 SELECT DISTINCT Title FROM FilmLocations WHERE ReleaseYear=2015 LIMIT 3 OFFSET 5;
+
+When using the UPDATE statement, if you do not specify the WHERE clause, all the rows in the table are updated.
+COUNT, DISTINCT, and LIMIT are expressions that are used with SELECT statements. 
+INSERT, UPDATE, and DELETE are DML statements for populating and changing tables. 
+
+# INSERT/UPDATE/DELETE
+
+## INSERT statement
+INSERT INTO table_name (column1, column2, ... )
+VALUES (value1, value2, ... )
+;
+
+### Insert a new instructor record with id 7 for Antonio Cangiano who lives in Vancouver, CA into the “Instructor” table.
+INSERT INTO Instructor(ins_id, lastname, firstname, city, country)
+VALUES(7, 'Cangiano', 'Antonio', 'Vancouver', 'CA');
+
+SELECT * FROM Instructor;
+
+### Insert two new instructor records into the “Instructor” table. First record with id 8 for Steve Ryan who lives in Barlby, GB. Second record with id 9 for Ramesh Sannareddy who lives in Hyderabad, IN.
+INSERT INTO Instructor(ins_id, lastname, firstname, city, country)
+VALUES(8, 'Ryan', 'Steve', 'Barlby', 'GB'), (9, 'Sannareddy', 'Ramesh', 'Hyderabad', 'IN');
+
+SELECT * FROM Instructor;
+
+## UPDATE statement
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition
+;
+
+## DELETE statement
+DELETE FROM table_name
+WHERE condition
+;
+
