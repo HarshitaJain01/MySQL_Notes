@@ -71,6 +71,26 @@ SET column1 = value1, column2 = value2, ...
 WHERE condition
 ;
 
+### Update the city for Sandip to Toronto.
+UPDATE Instructor 
+SET city='Toronto' 
+WHERE firstname="Sandip";
+
+### Update the city of the instructor record to Markham whose id is 1.
+UPDATE Instructor 
+SET city='Markham' 
+WHERE ins_id=1;
+
+SELECT * FROM Instructor;
+
+### Update the city and country for Sandip with id 4 to Dhaka and BD respectively.
+UPDATE Instructor 
+SET city='Dhaka', country='BD' 
+WHERE ins_id=4;
+
+SELECT * FROM Instructor;
+
+
 ## DELETE statement
 DELETE FROM table_name
 WHERE condition
