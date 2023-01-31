@@ -96,3 +96,8 @@ DELETE FROM table_name
 WHERE condition
 ;
 
+### Remove the instructor record of Hima.
+DELETE FROM instructor
+WHERE firstname = 'Hima';
+
+SELECT * FROM Instructor;
